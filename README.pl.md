@@ -7,6 +7,7 @@ Ten projekt został stworzony przy pomocy
 zapoznania się z konfiguracją dodatkowych opcji
 [zobacz dokumentację](https://facebook.github.io/create-react-app/docs/getting-started).
 
+
 ## Utworzenie repozytorium zgodnie z szablonem
 
 Wykorzystaj to repozytorium organizacji GoIT jako szablon do utworzenia
