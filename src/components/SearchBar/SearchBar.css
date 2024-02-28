@@ -1,0 +1,22 @@
+.search-form {
+  padding: 24px 0;
+}
+
+.search-form input {
+  font-size: 20px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin-right: 16px;
+}
+
+.search-form button {
+  padding: 8px;
+  border-radius: 8px;
+  background-color: rgb(209, 209, 209);
+  cursor: pointer;
+}
+
+.search-form button:hover,
+.search-form button:hover {
+  background-color: rgb(163, 163, 163);
+}
