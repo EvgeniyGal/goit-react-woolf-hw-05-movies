@@ -4,21 +4,19 @@ import './MovieDetails.css';
 
 function MovieDetails({ movie }) {
   const location = useLocation();
+  const toPath = location.state?.from ?? '/';
+  const imgPath = movie.poster_path
+    ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+    : poster;
+  const genres = movie.genres.map(({ name }) => name).join(', ');
 
   return (
     <main>
-      <Link className="go-back-btn" to={location.state?.from ?? '/'}>
+      <Link className="go-back-btn" to={toPath}>
         &larr; Go back
       </Link>
       <div className="movie-details-container">
-        <img
-          src={
-            movie.poster_path
-              ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-              : poster
-          }
-          alt={movie.title}
-        />
+        <img src={imgPath} alt={movie.title} />
         <div className="movie-details-data">
           <h1>{movie.title}</h1>
           <p>
@@ -31,11 +29,8 @@ function MovieDetails({ movie }) {
           </p>
           <p>
             {' '}
-            <span>Genres:</span>
-            {movie.genres.reduce(
-              (acc, genre) => (acc = `${acc} ${genre.name}`),
-              ''
-            )}
+            <span>Genres: </span>
+            {genres}
           </p>
         </div>
       </div>
@@ -43,12 +38,12 @@ function MovieDetails({ movie }) {
         <h2>Additional information</h2>
         <ul>
           <li>
-            <NavLink to="Cast" state={{ from: location.state?.from ?? '/' }}>
+            <NavLink to="Cast" state={{ from: toPath }}>
               Cast
             </NavLink>
           </li>
           <li>
-            <NavLink to="Reviews" state={{ from: location.state?.from ?? '/' }}>
+            <NavLink to="Reviews" state={{ from: toPath }}>
               Reviews
             </NavLink>
           </li>

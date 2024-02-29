@@ -2,8 +2,12 @@ import avatar from '../../assets/avatar.jpg';
 import './Cast.css';
 
 function Cast({ castData }) {
-  if (!castData) {
-    return <li className="no-data">There isn't any cast data.</li>;
+  if (!castData || castData.cast.length === 0) {
+    return (
+      <ul className="reviews_container">
+        <li className="no-data">There isn't any cast data.</li>
+      </ul>
+    );
   }
 
   return (
